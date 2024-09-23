@@ -14,7 +14,7 @@ def get_password(PASSWORD_LENGTH):
     password = input("Enter password: ")
     while len(password) < PASSWORD_LENGTH:
         password = input("Enter password: ")
-    return password
+    return password.
 
 
 main()
