@@ -1,3 +1,7 @@
+"""
+CP1404/CP5632 - Practical 2
+"""
+
 PASSWORD_LENGTH = 10
 
 
