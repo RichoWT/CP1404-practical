@@ -17,6 +17,7 @@ def main():
 
 
 def get_valid_score(prompt, low, high):
+    """get a valid score"""
     score = int(input(prompt))
     while score < low or score > high:
         print("invalid")
@@ -25,6 +26,7 @@ def get_valid_score(prompt, low, high):
 
 
 def print_result(score):
+    """sort the scores"""
     if score >= 90:
         return "excellent"
     elif score >= 50:
@@ -34,6 +36,7 @@ def print_result(score):
 
 
 def print_stars(score):
+    """multiply stars with the score"""
     return "*" * score
 
 

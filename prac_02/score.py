@@ -11,6 +11,7 @@ def main():
 
 
 def get_valid_score(prompt, low, high):
+    """get a valid score """
     score = float(input(prompt))
     while score < low or score > high:
         print("Invalid score")
@@ -19,6 +20,7 @@ def get_valid_score(prompt, low, high):
 
 
 def determine_grade(score):
+    "sort the scores"
     if score >= 90:
         return "excellent"
     elif score >= 50:
@@ -28,6 +30,7 @@ def determine_grade(score):
 
 
 def random_grade():
+    """get random grade"""
     random_grade = randint(0, 100)
     determined_grade = determine_grade(random_grade)
     return determined_grade

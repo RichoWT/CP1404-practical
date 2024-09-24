@@ -1,6 +1,6 @@
 """
 CP1404/CP5632 - Practical
-\\
+
 """
 
 
@@ -23,12 +23,14 @@ def main():
 
 
 def convert_farenheit_to_celcius():
+    """convert farenheit to celcius"""
     fahrenheit = float(input("Fahrenheit: "))
     celsius = 5 / 9 * (fahrenheit - 32)
     return celsius
 
 
 def convert_celcius_to_farenheit():
+    """convert celcius to farenheit"""
     celsius = float(input("Celsius: "))
     fahrenheit = celsius * 9.0 / 5 + 32
     return fahrenheit
