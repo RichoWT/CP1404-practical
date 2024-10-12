@@ -18,4 +18,8 @@ def main():
             number = random.randint(MINIMUM, MAXIMUM)
             while number in picks:
                 number = random.randint(MINIMUM, MAXIMUM)
+            picks.append(number)
+        picks.sort()
+        print(" ".join(f"{number:2}" for number in picks))
+
 main()
