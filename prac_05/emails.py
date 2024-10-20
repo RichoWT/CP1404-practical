@@ -5,6 +5,7 @@ Email to name dictionary
 
 
 def main():
+    """Verify the name and ask for the name """
     email_to_name = {}
     email = input("Email: ")
     while email != "":
@@ -20,6 +21,7 @@ def main():
 
 
 def get_name(email):
+    """Take name from email"""
     prefix = email.split("@")[0]
     parts = prefix.split(".")
     name = " ".join(parts).title()
