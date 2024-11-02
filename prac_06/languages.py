@@ -1,7 +1,7 @@
 """
 CP1404
 Time estimated: 20 minutes ( 10:12pm )
-Time finished:
+Time finished: 10:34pm ( 22 minutes )
 """
 
 from prac_06.programming_language import ProgrammingLanguage
