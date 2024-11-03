@@ -5,7 +5,7 @@ Time finished:
 """
 
 YEAR = 2024
-
+VINTAGE_AGE = 50
 
 class Guitar:
 
@@ -21,4 +21,4 @@ class Guitar:
         return YEAR - self.year
 
     def is_vintage(self):
-        return self.get_age() > 50
+        return self.get_age() > VINTAGE_AGE
