@@ -4,6 +4,8 @@ Time estimated: 30 minutes ( 3:07pm )
 Time finished:
 """
 
+YEAR = 2024
+
 
 class Guitar:
 
@@ -16,3 +18,7 @@ class Guitar:
         return f"{self.name} ({self.year}) : ${self.cost}"
 
     def get_age(self):
+        return YEAR - self.year
+
+    def is_vintage(self):
+        return self.get_age() > 50
