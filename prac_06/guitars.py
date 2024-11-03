@@ -1,7 +1,7 @@
 """
 CP1404
 Time estimated: 30 minutes ( 3:07pm )
-Time finished:
+Time finished: 57 minutes (4:04pm)
 """
 
 from prac_06.guitar import Guitar
