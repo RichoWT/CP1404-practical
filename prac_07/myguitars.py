@@ -5,6 +5,7 @@ from prac_07.guitar import Guitar
 def main():
     filename = 'guitar.csv'
     guitars = load_guitars_from_csv(filename)
+    guitars.sort()
     show_guitars(guitars)
 
 
