@@ -5,6 +5,7 @@ from prac_07.guitar import Guitar
 def main():
     filename = 'guitar.csv'
     guitars = load_guitars_from_csv(filename)
+    show_guitars(guitars)
 
 
 def load_guitars_from_csv(filename):
@@ -16,6 +17,11 @@ def load_guitars_from_csv(filename):
                 name, year, cost = row
                 guitars.append(Guitar(name.strip(), int(year), float(cost)))
     return guitars
+
+
+def show_guitars(guitars):
+    for guitar in guitars:
+        print(guitar)
 
 
 main()
