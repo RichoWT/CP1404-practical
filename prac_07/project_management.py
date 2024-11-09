@@ -28,6 +28,9 @@ def main():
             print("test6")
         else:
             print("invalid option")
+        option = input(">>> ").upper()
+    print("Thank you!")
+
 
 
 
