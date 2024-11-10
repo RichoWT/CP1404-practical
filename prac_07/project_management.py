@@ -27,6 +27,7 @@ def main():
             print(f"Projects saved to {FILENAME}")
 
         elif option == "D":
+            sort_project(projects)
             completed_projects = []
             incomplete_projects = []
             for project in projects:
@@ -100,6 +101,10 @@ def get_valid_percentage():
     except ValueError:
         print("Invalid input")
         return get_valid_percentage()
+
+
+def sort_project(projects):
+    return projects.sort(key=lambda project: project.priority)
 
 
 def save_project(projects):
