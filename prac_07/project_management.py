@@ -46,7 +46,15 @@ def main():
             print("test4")
 
         elif option == "A":
-            print("test5")
+            print("Let's add a new project")
+            name = get_valid_name()
+            new_date = get_valid_date()
+            priority = get_valid_priority()
+            cost_estimate = get_valid_cost_estimate()
+            completion_percentage = get_valid_percentage()
+            new_project = Project(name, new_date, priority, cost_estimate, completion_percentage)
+            projects.append(new_project)
+            sort_project(projects)
 
         elif option == "U":
             i = 1
@@ -88,6 +96,50 @@ def get_valid_choice(projects):
     except ValueError:
         print("Invalid input")
         return get_valid_choice(projects)
+
+
+def get_valid_name():
+    name = input("Name: ")
+    if name != "":
+        return name
+    print("name cannot be blank.")
+    return get_valid_name()
+
+
+def get_valid_date():
+    new_date = input("start date (dd/mm/yyyy): ")
+    try:
+        datetime.datetime.strptime(new_date, "%d/%m/%Y")
+        return new_date
+    except ValueError:
+        print("Invalid date format")
+        return get_valid_date()
+
+
+def get_valid_priority():
+    try:
+        priority = int(input("Priority: "))
+        if priority > 0:
+            return priority
+        else:
+            print("Priority must be more than 0.")
+            return get_valid_priority()
+    except ValueError:
+        print("Invalid input, please enter a real number")
+        return get_valid_priority()
+
+
+def get_valid_cost_estimate():
+    try:
+        cost_estimate = float(input("Cost estimate: "))
+        if cost_estimate >= 0:
+            return cost_estimate
+        else:
+            print("Cost cannot be less than 0")
+            return get_valid_cost_estimate()
+    except ValueError:
+        print("Invalid input, please enter a real number")
+        return get_valid_cost_estimate()
 
 
 def get_valid_percentage():
