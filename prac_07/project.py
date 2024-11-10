@@ -1,7 +1,7 @@
 """
 CP1404
 time started: 5:10pm (estimate - 1 day)
-
+time finished: 11:46pm
 """
 import datetime
 

@@ -1,7 +1,7 @@
 """
 CP1404
-time started: 5:10pm (estimate - 1 day)
-
+time started: 5:10pm (estimate - 1 day) ( 9 Nov )
+time finished: 11:46pm ( 10 Nov )
 """
 
 from prac_07.project import Project
@@ -23,7 +23,7 @@ def main():
             print("Projects loaded.")
 
         elif option == "S":
-            save_project(FILENAME)
+            save_project(projects)
             print(f"Projects saved to {FILENAME}")
 
         elif option == "D":
@@ -43,7 +43,11 @@ def main():
                 print(project)
 
         elif option == "F":
-            print("test4")
+            filter_date_str = get_valid_date()
+            filter_date = datetime.datetime.strptime(filter_date_str, "%d/%m/%Y").date()
+            filtered_projects = filter_project_with_date(projects, filter_date)
+            for project in filtered_projects:
+                print(f"{project}")
 
         elif option == "A":
             print("Let's add a new project")
@@ -159,12 +163,20 @@ def sort_project(projects):
     return projects.sort(key=lambda project: project.priority)
 
 
+def filter_project_with_date(projects, filter_date):
+    filtered_projects = []
+    for project in projects:
+        if project.start_date >= filter_date:
+            filtered_projects.append(project)
+    return filtered_projects
+
+
 def save_project(projects):
     with open(FILENAME, "w") as out_file:
         out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
         for project in projects:
             out_file.write(
-                f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t{project.priority}\t{project.cost_estimate}\t{project.percentage}\n")
+                f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t{project.priority}\t{project.cost_estimate}\t{project.completion_percentage}\n")
 
 
 main()
