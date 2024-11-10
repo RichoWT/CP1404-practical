@@ -23,7 +23,8 @@ def main():
             print("Projects loaded.")
 
         elif option == "S":
-            print("test2")
+            save_project(FILENAME)
+            print(f"Projects saved to {FILENAME}")
 
         elif option == "D":
             completed_projects = []
@@ -52,7 +53,9 @@ def main():
                 print(f"{i}. {project}")
                 i += 1
             choice = get_valid_choice(projects)
-            print(projects[choice - 1])
+            selected_project = projects[choice - 1]
+            new_percentage = get_valid_percentage()
+            selected_project.completion_percentage = new_percentage
 
         else:
             print("invalid option")
@@ -97,6 +100,14 @@ def get_valid_percentage():
     except ValueError:
         print("Invalid input")
         return get_valid_percentage()
+
+
+def save_project(projects):
+    with open(FILENAME, "w") as out_file:
+        out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
+        for project in projects:
+            out_file.write(
+                f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t{project.priority}\t{project.cost_estimate}\t{project.percentage}\n")
 
 
 main()
