@@ -5,21 +5,38 @@ time started: 5:10pm (estimate - 1 day)
 """
 
 
+from prac_07.project import Project
+import datetime
 FILENAME = "projects.txt"
 
 
 def main():
     print("Welcome to Pythonic Project Management")
+    projects = get_data(FILENAME)
     print(f"5 places loaded from {FILENAME}")
     print("- (L)oad projects\n- (S)ave projects\n- (D)isplay projects\n- (F)ilter projects by date\n- (A)dd new project\n- (U)pdate project\n- (Q)uit ")
     option = input(">>> ").upper()
     while option != "Q":
         if option == "L":
-            print("Test1")
+            print("Projects loaded.")
         elif option == "S":
             print("test2")
+
         elif option == "D":
-            print("test3")
+            completed_projects = []
+            incomplete_projects = []
+            for project in projects:
+                if project.is_complete():
+                    completed_projects.append(project)
+                else:
+                    incomplete_projects.append(project)
+            print("Incomplete projects:")
+            for project in incomplete_projects:
+                print(project)
+            print("\nCompleted projects:")
+            for project in completed_projects:
+                print(project)
+
         elif option == "F":
             print("test4")
         elif option == "A":
@@ -31,6 +48,15 @@ def main():
         option = input(">>> ").upper()
     print("Thank you!")
 
+def get_data(filename):
+    projects = []
+    with open(filename, "r") as in_file:
+        in_file.readline()
+        for line in in_file:
+            parts = line.strip().split("\t")
+            project = Project(parts[0], parts[1], int(parts[2]), float(parts[3]), int(parts[4]))
+            projects.append(project)
+        return projects
 
 
 
