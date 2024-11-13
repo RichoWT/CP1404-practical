@@ -3,21 +3,23 @@ BoxLayout:
 
     BoxLayout:
         orientation: 'horizontal'
-        Button:
-            text: 'input'
+        TextInput:
+            id: input_miles
+
 
         BoxLayout:
             orientation: 'vertical'
             Button:
-                text: 'testing2'
+                text: 'up'
             Button:
-                text:'testing1'
+                text:'down'
 
     Button:
-        text: 'button'
+        text: 'Convert miles to km'
 
-    Button:
-        text: 'output'
+    Label:
+        id: output_label
+        color: (1, 1, 0, 1)
 
 
 
