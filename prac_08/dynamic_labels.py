@@ -21,7 +21,7 @@ class DynamicLabelsApp(App):
         self.create_labels()
 
     def create_labels(self):
-        """loop the list to display name"""
+        """loop the list to display names"""
         main_layout = self.root.ids.main
         for name in self.names:
             temp_label = Label(text=name)
