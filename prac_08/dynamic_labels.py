@@ -6,6 +6,7 @@ from kivy.uix.label import Label
 
 class DynamicLabelsApp(App):
     def __init__(self, **kwargs):
+        """Create main app"""
         super().__init__(**kwargs)
         self.names = ["Brodie", "Kevin", "Collins", "Chris"]
 
@@ -15,7 +16,12 @@ class DynamicLabelsApp(App):
         self.root = Builder.load_file('dynamic_labels.kv')
         return self.root
 
+    def on_start(self):
+        """create label"""
+        self.create_labels()
+
     def create_labels(self):
+        """loop the list to display name"""
         main_layout = self.root.ids.main
         for name in self.names:
             temp_label = Label(text=name)
