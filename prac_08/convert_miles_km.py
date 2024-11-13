@@ -20,6 +20,11 @@ class ConvertMiles(App):
         miles = self.convert_to_number(text)
         self.update_result(miles)
 
+    def handle_increment(self, text, change):
+        print("handle increment")
+        miles = self.convert_to_number(text) + change
+        self.root.ids.input_miles.text = str(miles)
+
     def update_result(self, miles):
         print("update")
         self.output_km = str(miles * FACTOR_MILES_TO_KM)
