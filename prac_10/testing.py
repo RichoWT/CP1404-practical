@@ -52,6 +52,21 @@ def run_tests():
     assert car.fuel == 0
 
 
+def phrase_to_sentence(phrase):
+    """
+    Format phrase to sentence.
+    >>> phrase_to_sentence('hello')
+    'Hello.'
+    >>> phrase_to_sentence('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> phrase_to_sentence('Chess is fun')
+    'Chess is fun.'
+    """
+    sentence = phrase.capitalize()
+    if sentence[-1] != '.':
+        sentence = f"{sentence}."
+    return sentence
+
 
 run_tests()
 
